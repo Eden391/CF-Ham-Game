@@ -1,17 +1,15 @@
-extends Area2D
+extends Node
 
 var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	score = 0
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_body_entered(body: CharacterBody2D) -> void:
-	queue_free()
-	Globals.add_score()
-	
+func add_score():
+	score += 20

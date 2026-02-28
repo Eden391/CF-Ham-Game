@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var score: Label = $Score
 
 const SPEED = 600.0
 const JUMP_VELOCITY = -600.0
@@ -9,6 +10,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
@@ -23,6 +25,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	score.text = "Score: " + str(Globals.score)
 
 
 func _on_timer_timeout() -> void:
