@@ -32,4 +32,5 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
 	
-	
+func respawn():
+	get_tree().reload_current_scene

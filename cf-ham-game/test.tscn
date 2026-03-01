@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bhyim4apgsubl" path="res://blue.jpg" id="3_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://bvuw5dfnq4rss" path="res://collectable.tscn" id="3_ppyta"]
 [ext_resource type="Texture2D" uid="uid://baq2mu7ra7mld" path="res://Foozle_2DS0025_Scallywag_Pirates/Pirate Blue Sprite Sheet/Pirates Blue Sprite Sheet.png" id="5_ykrsh"]
+[ext_resource type="Script" uid="uid://bgk66cprn132" path="res://area_2d.gd" id="6_g14j6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykrsh"]
 texture = ExtResource("2_ppyta")
@@ -716,6 +717,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbegm"]
+size = Vector2(7856.5, 1618.5)
+
 [node name="Main Node" type="Node2D" unique_id=2096465234]
 position = Vector2(-2112, 199)
 
@@ -776,3 +780,11 @@ offset_top = -1109.0
 offset_right = 4939.0
 offset_bottom = 1941.0
 texture = ExtResource("3_6uqi0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=231050355]
+position = Vector2(948, 2713)
+script = ExtResource("6_g14j6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1797526377]
+position = Vector2(109, 42)
+shape = SubResource("RectangleShape2D_vbegm")
